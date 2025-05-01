@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your Name</title>
+  <meta name="description" content="Personal terminal-style portfolio site">
+  <meta name="author" content="Your Name">
+  <title>whoami</title>
   <style>
     body {
       background-color: #0d1117;
@@ -28,6 +30,13 @@
       margin: 0 auto;
       border: 1px dashed #00ff66;
       padding: 2rem;
+    }
+
+    .ascii {
+      color: #00ff66;
+      font-size: 12px;
+      white-space: pre;
+      margin-bottom: 2rem;
     }
 
     .section {
@@ -58,14 +67,39 @@
       border-style: dashed;
       margin: 2rem 0;
     }
+
+    #log-output {
+      white-space: pre-wrap;
+    }
+
+    .cursor {
+      display: inline-block;
+      background-color: #00ff66;
+      width: 10px;
+      height: 16px;
+      margin-left: 2px;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 50%, 100% { opacity: 1; }
+      25%, 75% { opacity: 0; }
+    }
   </style>
 </head>
 <body>
   <div class="terminal">
+    <div class="ascii">
+       ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+      █ ▄▄▄ █▄▀█ ▄▄ █ ▄▄ ▄ █ ▄ ▀█▄ ▄▄█ ▄▄▄ █
+      █ ███ █ ▀▄█ ▄▀█ ▄ ▄▄█ ▄ ▀ ▄ ████ ███ █
+      █▄▄▄▄▄█ █ █▄▀▄█ █ █ █ █ █ █ █▄▄▄█▄▄▄█ █
+      ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+    </div>
 
     <div class="section">
       <div class="section-title">whoami</div>
-      <p>I’m a developer focused on tools, interfaces, and cyberpunk vibes.</p>
+      <p>A coder with a thing for terminals and typing effects.</p>
     </div>
 
     <div class="section">
@@ -74,17 +108,17 @@
       <div class="entry">
         <strong>NeonTracker</strong><span class="tag">LIVE</span><br/>
         <a href="#">https://neontracker.dev</a><br/>
-        A visual database for sci-fi interfaces.
+        Sci-fi interface database.
       </div>
 
       <div class="entry">
         <strong>TermoLog</strong><span class="tag">IN DEV</span><br/>
-        Command-line inspired journal app with local encryption.
+        CLI-inspired journal with encryption.
       </div>
 
       <div class="entry">
         <strong>GhostGrid</strong><span class="tag">ARCHIVED</span><br/>
-        P2P file hosting with a hacker aesthetic.
+        Peer-to-peer file sharing with a hacker vibe.
       </div>
     </div>
 
@@ -98,9 +132,32 @@
 
     <div class="section">
       <div class="section-title">logs</div>
-      <p>[last login: Mon Apr 29 21:03:44 2025]</p>
-      <p>> building something new...</p>
+      <div id="log-output">[booting terminal... ]<span class="cursor"></span></div>
     </div>
   </div>
+
+  <script>
+    const logText = `
+[last login: Apr 29 2025 21:03:44]
+> compiling projects...
+> loading .env
+> success: system online.
+> listening for requests...
+`;
+    const output = document.getElementById("log-output");
+    let index = 0;
+    const cursor = document.querySelector(".cursor");
+
+    function typeLine() {
+      if (index < logText.length) {
+        output.innerHTML = logText.slice(0, index++) + '<span class="cursor"></span>';
+        setTimeout(typeLine, 40);
+      } else {
+        cursor.style.display = "inline-block";
+      }
+    }
+
+    setTimeout(typeLine, 1000);
+  </script>
 </body>
 </html>
