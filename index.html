@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>i am vin</title>
+  <title>Your Name</title>
   <style>
     body {
       background-color: #0d1117;
@@ -12,7 +12,6 @@
       margin: 0;
       padding: 2rem;
       font-size: 16px;
-      line-height: 1.5;
     }
 
     a {
@@ -31,16 +30,18 @@
       padding: 2rem;
     }
 
-    .ascii-img {
-      width: 120px;
-      height: 120px;
-      background-color: #003322;
-      display: inline-block;
-      margin-right: 1rem;
+    .section {
+      margin-top: 2rem;
     }
 
-    .project {
-      margin-top: 1rem;
+    .section-title {
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .entry {
+      margin-bottom: 1.5rem;
     }
 
     .tag {
@@ -49,85 +50,57 @@
       padding: 0.1rem 0.5rem;
       margin-left: 0.5rem;
       background-color: #002211;
-    }
-
-    .section-title {
-      margin-top: 2rem;
-      font-weight: bold;
-      font-size: 1.2rem;
-    }
-
-    .quote {
-      font-size: 0.85rem;
-      color: #66ff99;
-      margin: 1rem 0;
-      font-style: italic;
+      display: inline-block;
     }
 
     hr {
       border-color: #00ff66;
       border-style: dashed;
-      margin: 1rem 0;
+      margin: 2rem 0;
     }
   </style>
 </head>
 <body>
   <div class="terminal">
-    <div style="display: flex; align-items: center;">
-      <div class="ascii-img"></div>
-      <div>
-        <h2>i am vin</h2>
-        <p>a software engineer babysitting gpus at ██████. sometimes i remember i have an account on <a href="#">x dot com</a>.</p>
+
+    <div class="section">
+      <div class="section-title">whoami</div>
+      <p>I’m a developer focused on tools, interfaces, and cyberpunk vibes.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">projects</div>
+
+      <div class="entry">
+        <strong>NeonTracker</strong><span class="tag">LIVE</span><br/>
+        <a href="#">https://neontracker.dev</a><br/>
+        A visual database for sci-fi interfaces.
+      </div>
+
+      <div class="entry">
+        <strong>TermoLog</strong><span class="tag">IN DEV</span><br/>
+        Command-line inspired journal app with local encryption.
+      </div>
+
+      <div class="entry">
+        <strong>GhostGrid</strong><span class="tag">ARCHIVED</span><br/>
+        P2P file hosting with a hacker aesthetic.
       </div>
     </div>
 
-    <p class="quote">"When you're anxious to learn something and need to get better as quickly as possible... the solution is to make it part of your daily life. After all, there's no greater teacher than life itself."</p>
-
-    <hr />
-
-    <div class="section-title">projects</div>
-
-    <div class="project">
-      <strong>PanelDesu</strong><span class="tag">ONLINE</span><br/>
-      <a href="https://paneldesu.com">https://paneldesu.com</a><br/>
-      Manga panel search engine<br/>
-      Launched Tue Jul 30 2024
+    <div class="section">
+      <div class="section-title">contact</div>
+      <p>📧 <a href="mailto:you@example.com">you@example.com</a></p>
+      <p>💻 <a href="https://github.com/yourusername">GitHub</a></p>
     </div>
 
-    <div class="project">
-      <strong>CanvasDesu</strong><span class="tag">ONLINE</span><br/>
-      <a href="https://canvasdesu.com">https://canvasdesu.com</a><br/>
-      AI image editor<br/>
-      Launched Mon Sep 02 2024
-    </div>
+    <hr>
 
-    <div class="project">
-      <strong>vin.gg</strong><span class="tag">ONLINE</span><br/>
-      Personal website<br/>
-      Launched Sat Apr 13 2024
+    <div class="section">
+      <div class="section-title">logs</div>
+      <p>[last login: Mon Apr 29 21:03:44 2025]</p>
+      <p>> building something new...</p>
     </div>
-
-    <div class="project">
-      <strong>Liminal</strong><span class="tag">IN DEV</span><br/>
-      LLM based writing tool<br/>
-      Started Sun Oct 13 2024
-    </div>
-
-    <div class="project">
-      <strong>Karalite</strong><span class="tag">IN DEV</span><br/>
-      File storage and CDN platform with a focus on discoverability<br/>
-      Started Sun Sep 10 2023
-    </div>
-
-    <div class="project">
-      <strong>Gaze</strong><span class="tag">ABANDONED</span><br/>
-      <a href="https://github.com/yourgithub/gaze">GitHub Repo</a><br/>
-      Cross-platform local-first open source alternative to AI recall apps<br/>
-      Abandoned Wed Jul 10 2024
-    </div>
-
-    <div class="section-title">my activity</div>
-    <p>[insert terminal activity logs here...]</p>
   </div>
 </body>
 </html>
