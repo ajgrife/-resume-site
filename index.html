@@ -2,78 +2,132 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blade Runner Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>i am vin</title>
   <style>
     body {
-      font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(to bottom, #0f0f1a, #121218);
-      color: #c5c6c7;
-      scroll-behavior: smooth;
+      background-color: #0d1117;
+      color: #00ff66;
+      font-family: 'Courier New', Courier, monospace;
+      margin: 0;
+      padding: 2rem;
+      font-size: 16px;
+      line-height: 1.5;
     }
-    .neon {
-      color: #0ff;
-      text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
+
+    a {
+      color: #00ccff;
+      text-decoration: none;
     }
-    .glass {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(8px);
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .terminal {
+      max-width: 800px;
+      margin: 0 auto;
+      border: 1px dashed #00ff66;
+      padding: 2rem;
+    }
+
+    .ascii-img {
+      width: 120px;
+      height: 120px;
+      background-color: #003322;
+      display: inline-block;
+      margin-right: 1rem;
+    }
+
+    .project {
+      margin-top: 1rem;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      border: 1px solid #00ff66;
+      padding: 0.1rem 0.5rem;
+      margin-left: 0.5rem;
+      background-color: #002211;
+    }
+
+    .section-title {
+      margin-top: 2rem;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .quote {
+      font-size: 0.85rem;
+      color: #66ff99;
+      margin: 1rem 0;
+      font-style: italic;
+    }
+
+    hr {
+      border-color: #00ff66;
+      border-style: dashed;
+      margin: 1rem 0;
     }
   </style>
 </head>
-<body class="min-h-screen flex flex-col">
-  <header class="text-center py-6 border-b border-gray-700">
-    <h1 class="text-4xl neon">Neo Dev</h1>
-    <nav class="mt-2">
-      <a href="#projects" class="mx-4 hover:text-cyan-400">Projects</a>
-      <a href="#about" class="mx-4 hover:text-cyan-400">About</a>
-      <a href="#contact" class="mx-4 hover:text-cyan-400">Contact</a>
-    </nav>
-  </header>
-
-  <main class="flex-1 container mx-auto px-4 py-16">
-    <section class="text-center mb-20">
-      <h2 class="text-2xl text-gray-400">Welcome to the future of code</h2>
-      <h1 class="text-5xl mt-4 text-white neon">I'm a Creator of Digital Realities</h1>
-    </section>
-
-    <section id="projects" class="mb-20">
-      <h2 class="text-3xl text-cyan-400 mb-8 text-center">Projects</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="p-6 glass rounded-lg shadow-lg hover:shadow-cyan-500/50">
-          <h3 class="text-xl neon mb-2">Neon Weather App</h3>
-          <p class="mb-4">A sleek cyberpunk weather app using live API data.</p>
-          <a href="#" class="text-cyan-300 hover:underline">View Project</a>
-        </div>
-        <div class="p-6 glass rounded-lg shadow-lg hover:shadow-cyan-500/50">
-          <h3 class="text-xl neon mb-2">Replicant Tracker</h3>
-          <p class="mb-4">Track fictional replicants across neon-lit districts.</p>
-          <a href="#" class="text-cyan-300 hover:underline">View Project</a>
-        </div>
-        <div class="p-6 glass rounded-lg shadow-lg hover:shadow-cyan-500/50">
-          <h3 class="text-xl neon mb-2">AI Voice Terminal</h3>
-          <p class="mb-4">A terminal-style interface with AI voice command integration.</p>
-          <a href="#" class="text-cyan-300 hover:underline">View Project</a>
-        </div>
+<body>
+  <div class="terminal">
+    <div style="display: flex; align-items: center;">
+      <div class="ascii-img"></div>
+      <div>
+        <h2>i am vin</h2>
+        <p>a software engineer babysitting gpus at ██████. sometimes i remember i have an account on <a href="#">x dot com</a>.</p>
       </div>
-    </section>
+    </div>
 
-    <section id="about" class="text-center mb-20">
-      <h2 class="text-3xl text-cyan-400 mb-4">About</h2>
-      <p class="max-w-2xl mx-auto">I build futuristic web apps with a style inspired by retro sci-fi and cyberpunk aesthetics. My goal is to make the digital feel alive, glowing, and cinematic.</p>
-    </section>
+    <p class="quote">"When you're anxious to learn something and need to get better as quickly as possible... the solution is to make it part of your daily life. After all, there's no greater teacher than life itself."</p>
 
-    <section id="contact" class="text-center">
-      <h2 class="text-3xl text-cyan-400 mb-4">Contact</h2>
-      <p>Reach me via <a href="mailto:neo.dev@example.com" class="text-cyan-300 hover:underline">email</a> or connect on <a href="#" class="text-cyan-300 hover:underline">GitHub</a>.</p>
-    </section>
-  </main>
+    <hr />
 
-  <footer class="text-center py-6 border-t border-gray-700">
-    <p class="text-gray-500">&copy; 2025 Neo Dev. All rights reserved.</p>
-  </footer>
+    <div class="section-title">projects</div>
+
+    <div class="project">
+      <strong>PanelDesu</strong><span class="tag">ONLINE</span><br/>
+      <a href="https://paneldesu.com">https://paneldesu.com</a><br/>
+      Manga panel search engine<br/>
+      Launched Tue Jul 30 2024
+    </div>
+
+    <div class="project">
+      <strong>CanvasDesu</strong><span class="tag">ONLINE</span><br/>
+      <a href="https://canvasdesu.com">https://canvasdesu.com</a><br/>
+      AI image editor<br/>
+      Launched Mon Sep 02 2024
+    </div>
+
+    <div class="project">
+      <strong>vin.gg</strong><span class="tag">ONLINE</span><br/>
+      Personal website<br/>
+      Launched Sat Apr 13 2024
+    </div>
+
+    <div class="project">
+      <strong>Liminal</strong><span class="tag">IN DEV</span><br/>
+      LLM based writing tool<br/>
+      Started Sun Oct 13 2024
+    </div>
+
+    <div class="project">
+      <strong>Karalite</strong><span class="tag">IN DEV</span><br/>
+      File storage and CDN platform with a focus on discoverability<br/>
+      Started Sun Sep 10 2023
+    </div>
+
+    <div class="project">
+      <strong>Gaze</strong><span class="tag">ABANDONED</span><br/>
+      <a href="https://github.com/yourgithub/gaze">GitHub Repo</a><br/>
+      Cross-platform local-first open source alternative to AI recall apps<br/>
+      Abandoned Wed Jul 10 2024
+    </div>
+
+    <div class="section-title">my activity</div>
+    <p>[insert terminal activity logs here...]</p>
+  </div>
 </body>
 </html>
