@@ -2,22 +2,74 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Personal terminal-style portfolio site">
-  <meta name="author" content="Your Name">
-  <title>whoami</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Electrical Engineer Portfolio Site" />
+  <meta name="author" content="Your Name" />
+  <title>Your Name | Electrical Engineer</title>
   <style>
     body {
-      background-color: #0d1117;
-      color: #00ff66;
-      font-family: 'Courier New', Courier, monospace;
+      background-color: #f4f4f4;
+      color: #222;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #001f3f;
+      color: white;
       padding: 2rem;
-      font-size: 16px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    header p {
+      margin: 0.5rem 0 0;
+      font-size: 1rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      color: #001f3f;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #001f3f;
+      padding-bottom: 0.5rem;
+    }
+
+    .project {
+      margin-bottom: 1.5rem;
+    }
+
+    .project h3 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    .project p {
+      margin: 0.25rem 0 0;
+      color: #555;
+    }
+
+    .contact p {
+      margin: 0.5rem 0;
     }
 
     a {
-      color: #00ccff;
+      color: #0074D9;
       text-decoration: none;
     }
 
@@ -25,139 +77,64 @@
       text-decoration: underline;
     }
 
-    .terminal {
-      max-width: 800px;
-      margin: 0 auto;
-      border: 1px dashed #00ff66;
-      padding: 2rem;
-    }
-
-    .ascii {
-      color: #00ff66;
-      font-size: 12px;
-      white-space: pre;
-      margin-bottom: 2rem;
-    }
-
-    .section {
-      margin-top: 2rem;
-    }
-
-    .section-title {
-      font-weight: bold;
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .entry {
-      margin-bottom: 1.5rem;
-    }
-
-    .tag {
-      font-size: 0.75rem;
-      border: 1px solid #00ff66;
-      padding: 0.1rem 0.5rem;
-      margin-left: 0.5rem;
-      background-color: #002211;
-      display: inline-block;
-    }
-
-    hr {
-      border-color: #00ff66;
-      border-style: dashed;
-      margin: 2rem 0;
-    }
-
-    #log-output {
-      white-space: pre-wrap;
-    }
-
-    .cursor {
-      display: inline-block;
-      background-color: #00ff66;
-      width: 10px;
-      height: 16px;
-      margin-left: 2px;
-      animation: blink 1s infinite;
-    }
-
-    @keyframes blink {
-      0%, 50%, 100% { opacity: 1; }
-      25%, 75% { opacity: 0; }
+    footer {
+      background-color: #001f3f;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
-  <div class="terminal">
-    <div class="ascii">
-       ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-      █ ▄▄▄ █▄▀█ ▄▄ █ ▄▄ ▄ █ ▄ ▀█▄ ▄▄█ ▄▄▄ █
-      █ ███ █ ▀▄█ ▄▀█ ▄ ▄▄█ ▄ ▀ ▄ ████ ███ █
-      █▄▄▄▄▄█ █ █▄▀▄█ █ █ █ █ █ █ █▄▄▄█▄▄▄█ █
-      ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-    </div>
+  <header>
+    <h1>Your Name</h1>
+    <p>Electrical Engineer | Embedded Systems | Hardware Design</p>
+  </header>
 
-    <div class="section">
-      <div class="section-title">whoami</div>
-      <p>A coder with a thing for terminals and typing effects.</p>
-    </div>
+  <div class="container">
+    <section>
+      <div class="section-title">About Me</div>
+      <p>I’m an electrical engineer with experience in circuit design, embedded systems, and hardware prototyping. I enjoy solving complex problems and turning ideas into working hardware.</p>
+    </section>
 
-    <div class="section">
-      <div class="section-title">projects</div>
-
-      <div class="entry">
-        <strong>NeonTracker</strong><span class="tag">LIVE</span><br/>
-        <a href="#">https://neontracker.dev</a><br/>
-        Sci-fi interface database.
+    <section>
+      <div class="section-title">Projects</div>
+      <div class="project">
+        <h3>Smart Sensor Network</h3>
+        <p>Designed and deployed a mesh-based sensor network for environmental monitoring using low-power microcontrollers.</p>
       </div>
-
-      <div class="entry">
-        <strong>TermoLog</strong><span class="tag">IN DEV</span><br/>
-        CLI-inspired journal with encryption.
+      <div class="project">
+        <h3>Custom PCB for Motor Control</h3>
+        <p>Created a custom PCB and firmware for a brushless DC motor controller used in robotics applications.</p>
       </div>
-
-      <div class="entry">
-        <strong>GhostGrid</strong><span class="tag">ARCHIVED</span><br/>
-        Peer-to-peer file sharing with a hacker vibe.
+      <div class="project">
+        <h3>IoT Weather Station</h3>
+        <p>Developed an internet-connected weather station with solar power and real-time data logging.</p>
       </div>
-    </div>
+    </section>
 
-    <div class="section">
-      <div class="section-title">contact</div>
-      <p>📧 <a href="mailto:you@example.com">you@example.com</a></p>
-      <p>💻 <a href="https://github.com/yourusername">GitHub</a></p>
-    </div>
+    <section>
+      <div class="section-title">Skills</div>
+      <ul>
+        <li>Embedded C / Microcontrollers</li>
+        <li>PCB Design (KiCad, Altium)</li>
+        <li>Signal Processing</li>
+        <li>FPGA (basic)</li>
+        <li>Power Electronics</li>
+      </ul>
+    </section>
 
-    <hr>
-
-    <div class="section">
-      <div class="section-title">logs</div>
-      <div id="log-output">[booting terminal... ]<span class="cursor"></span></div>
-    </div>
+    <section class="contact">
+      <div class="section-title">Contact</div>
+      <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile">linkedin.com/in/yourprofile</a></p>
+      <p>GitHub: <a href="https://github.com/yourusername">github.com/yourusername</a></p>
+    </section>
   </div>
 
-  <script>
-    const logText = `
-[last login: Apr 29 2025 21:03:44]
-> compiling projects...
-> loading .env
-> success: system online.
-> listening for requests...
-`;
-    const output = document.getElementById("log-output");
-    let index = 0;
-    const cursor = document.querySelector(".cursor");
-
-    function typeLine() {
-      if (index < logText.length) {
-        output.innerHTML = logText.slice(0, index++) + '<span class="cursor"></span>';
-        setTimeout(typeLine, 40);
-      } else {
-        cursor.style.display = "inline-block";
-      }
-    }
-
-    setTimeout(typeLine, 1000);
-  </script>
+  <footer>
+    &copy; 2025 Your Name. All rights reserved.
+  </footer>
 </body>
 </html>
