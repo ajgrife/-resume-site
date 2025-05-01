@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Spectrum Analyzer Project" />
+  <meta name="author" content="Your Name" />
+  <title>Spectrum Analyzer Project</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #222;
+    }
+
+    header {
+      background-color: #001f3f;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      color: #001f3f;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #001f3f;
+      padding-bottom: 0.5rem;
+    }
+
+    model-viewer {
+      width: 100%;
+      height: 500px;
+      background-color: #eaeaea;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Spectrum Analyzer</h1>
+    <p>A real-time spectrum analyzer with visual output and custom enclosure</p>
+  </header>
+
+  <div class="container">
+    <section>
+      <div class="section-title">Overview</div>
+      <p>This spectrum analyzer project uses an FFT algorithm on an embedded microcontroller to provide real-time frequency spectrum data. It features a display interface, analog front end, and USB communication.</p>
+    </section>
+
+    <section>
+      <div class="section-title">Technical Details</div>
+      <ul>
+        <li>Microcontroller: STM32F4 series</li>
+        <li>ADC Sampling Rate: 48 kHz</li>
+        <li>Display: 2.4" TFT LCD</li>
+        <li>Enclosure: Custom-designed for 3D printing or CNC machining</li>
+      </ul>
+    </section>
+
+    <section>
+      <div class="section-title">3D CAD Preview</div>
+      <model-viewer 
+        src="spectrum-analyzer-cad.glb" 
+        alt="3D CAD model of the Spectrum Analyzer"
+        auto-rotate
+        camera-controls
+        ar
+        ar-modes="webxr scene-viewer quick-look">
+      </model-viewer>
+      <p><small>You can rotate, zoom, and inspect the 3D model of the enclosure above.</small></p>
+    </section>
+  </div>
+</body>
+</html>
