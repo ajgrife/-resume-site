@@ -6,167 +6,144 @@
   <meta name="description" content="Electrical Engineer Portfolio Site" />
   <meta name="author" content="Your Name" />
   <title>Your Name | Electrical Engineer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    html, body {
+    :root {
+      --primary: #1a1a1a;
+      --secondary: #0070f3;
+      --background: #ffffff;
+      --text: #1a1a1a;
+      --muted: #6b7280;
+    }
+
+    * {
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
-      font-family: 'Orbitron', sans-serif;
-      color: #fff;
-      overflow-x: hidden;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 16px;
     }
 
     header {
-      background: linear-gradient(90deg, #00f0ff, #8a2be2);
-      color: #000;
+      background-color: var(--primary);
+      color: #fff;
+      padding: 3rem 1rem;
       text-align: center;
-      padding: 4rem 2rem;
-      animation: glitchBg 6s infinite alternate;
-    }
-
-    @keyframes glitchBg {
-      0% { filter: hue-rotate(0deg); }
-      100% { filter: hue-rotate(360deg); }
     }
 
     header h1 {
-      font-size: 3rem;
-      text-shadow: 2px 2px #ff00ff;
-      animation: float 3s ease-in-out infinite;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
     }
 
     header p {
       font-size: 1.2rem;
-      margin-top: 0.5rem;
-      text-shadow: 1px 1px #00ffff;
+      color: #ccc;
     }
 
     .container {
-      max-width: 960px;
+      max-width: 900px;
       margin: 0 auto;
       padding: 3rem 1rem;
-      animation: fadeIn 2s ease-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
     }
 
     .section-title {
-      font-size: 2rem;
-      border-left: 5px solid #ff00ff;
-      padding-left: 1rem;
-      margin-bottom: 2rem;
-      color: #00ffff;
-      position: relative;
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+      border-bottom: 2px solid #eee;
+      padding-bottom: 0.5rem;
     }
 
     section {
-      margin-bottom: 5rem;
+      margin-bottom: 4rem;
     }
 
     .project {
-      background: #111;
-      border: 2px solid #333;
-      padding: 1.5rem;
       margin-bottom: 2rem;
-      border-radius: 12px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .project:hover {
-      transform: scale(1.02) rotate(-0.5deg);
-      box-shadow: 0 0 20px #ff00ff, 0 0 40px #00ffff;
     }
 
     .project h3 {
-      margin: 0 0 0.5rem;
-      color: #f0f;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
+      margin-bottom: 0.3rem;
+      color: var(--primary);
     }
 
     .project p {
-      color: #ccc;
+      color: var(--muted);
     }
 
     .read-more {
       display: inline-block;
-      margin-top: 1rem;
+      margin-top: 0.8rem;
       padding: 0.5rem 1rem;
-      background: linear-gradient(to right, #00ffff, #ff00ff);
-      color: #000;
-      font-weight: bold;
-      text-transform: uppercase;
-      border-radius: 8px;
+      background-color: var(--secondary);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 0.9rem;
       text-decoration: none;
-      transition: all 0.3s ease;
+      transition: background-color 0.3s ease;
     }
 
     .read-more:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 10px #fff;
+      background-color: #0059c1;
     }
 
     ul {
-      list-style-type: square;
-      padding-left: 2rem;
+      list-style: none;
+      padding-left: 0;
     }
 
-    li {
+    ul li {
       margin-bottom: 0.5rem;
-      color: #ccc;
+      position: relative;
+      padding-left: 1.2rem;
     }
 
-    .contact a {
-      color: #00ffff;
+    ul li::before {
+      content: '•';
+      color: var(--secondary);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+
+    .contact p {
+      margin: 0.5rem 0;
+    }
+
+    a {
+      color: var(--secondary);
       text-decoration: none;
-      border-bottom: 1px dashed #00ffff;
-      transition: all 0.3s ease;
     }
 
-    .contact a:hover {
-      color: #ff00ff;
-      border-bottom-color: #ff00ff;
+    a:hover {
+      text-decoration: underline;
     }
 
     footer {
-      background: #000;
-      color: #666;
+      background-color: var(--primary);
+      color: #aaa;
       text-align: center;
       padding: 2rem 1rem;
       font-size: 0.9rem;
-      border-top: 2px solid #222;
     }
 
-    /* Animations */
-    @keyframes float {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-      100% { transform: translateY(0); }
-    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
 
-    @keyframes glitch {
-      0% {
-        transform: skew(-5deg);
-        opacity: 0.8;
-      }
-      20% {
-        transform: skew(5deg);
-      }
-      40% {
-        transform: skew(-2deg);
-      }
-      60% {
-        transform: skew(3deg);
-      }
-      80% {
-        transform: skew(-1deg);
-      }
-      100% {
-        transform: none;
-        opacity: 1;
+      .section-title {
+        font-size: 1.5rem;
       }
     }
   </style>
@@ -174,47 +151,54 @@
 <body>
   <header>
     <h1>Your Name</h1>
-    <p>Electrical Engineer ⚡ Embedded Systems 👾 Hardware Wizard</p>
+    <p>Electrical Engineer | Embedded Systems | Hardware Design</p>
   </header>
 
   <div class="container">
     <section>
-      <div class="section-title">👤 About Me</div>
-      <p>I’m an electrical engineer with a love for bending electrons to my will. Circuit design, firmware sorcery, and hardware hacking are my playgrounds.</p>
+      <div class="section-title">About Me</div>
+      <p>
+        I’m an electrical engineer with a strong foundation in circuit design, embedded systems, and hardware prototyping. 
+        I enjoy building reliable, efficient, and scalable hardware solutions that solve real-world problems. 
+        With experience across multiple industries, I bring precision and clarity to every project I take on.
+      </p>
     </section>
 
     <section>
-      <div class="section-title">🛠️ Projects</div>
+      <div class="section-title">Projects</div>
+
       <div class="project">
         <h3>Smart Sensor Network</h3>
-        <p>Mesh-based environmental monitoring system with ultra-low power nodes and embedded intelligence.</p>
+        <p>Designed and deployed a mesh-based environmental sensor network using ultra-low-power microcontrollers and wireless communication protocols.</p>
         <a class="read-more" href="spectrum-analyzer.html">Read More</a>
       </div>
+
       <div class="project">
         <h3>Custom PCB for Motor Control</h3>
-        <p>Designed a BLDC controller from scratch for robotic mayhem and motion precision.</p>
+        <p>Developed a custom BLDC motor controller PCB and firmware for robotics applications, with PID tuning and fault protection features.</p>
         <a class="read-more" href="motor-control.html">Read More</a>
       </div>
+
       <div class="project">
         <h3>IoT Weather Station</h3>
-        <p>Built a solar-powered, cloud-connected weather brain with real-time data visualization.</p>
+        <p>Built a solar-powered weather station with real-time data logging and remote dashboard integration using MQTT and AWS IoT.</p>
         <a class="read-more" href="iot-weather-station.html">Read More</a>
       </div>
     </section>
 
     <section>
-      <div class="section-title">⚙️ Skills</div>
+      <div class="section-title">Skills</div>
       <ul>
-        <li>⚡ Embedded C / Bare-metal MCU programming</li>
-        <li>🔧 PCB Design (KiCad, Altium)</li>
-        <li>📈 Signal Processing & DSP</li>
-        <li>🧠 FPGA Prototyping (basic)</li>
-        <li>🔌 Power Electronics</li>
+        <li>Embedded C / Microcontroller Firmware Development</li>
+        <li>PCB Design (KiCad, Altium Designer)</li>
+        <li>Signal Processing & Sensor Fusion</li>
+        <li>FPGA (VHDL, Verilog - Basic)</li>
+        <li>Power Electronics & Switching Regulators</li>
       </ul>
     </section>
 
     <section class="contact">
-      <div class="section-title">📡 Contact</div>
+      <div class="section-title">Contact</div>
       <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
       <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile">linkedin.com/in/yourprofile</a></p>
       <p>GitHub: <a href="https://github.com/yourusername">github.com/yourusername</a></p>
@@ -222,7 +206,7 @@
   </div>
 
   <footer>
-    🚀 &copy; 2025 Your Name. Stay weird. Stay electric.
+    &copy; 2025 Your Name. All rights reserved.
   </footer>
 </body>
 </html>
