@@ -3,182 +3,136 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your Name | Electrical Engineer</title>
+  <title>Your Projects</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #0d1117;
-      --card: #161b22;
-      --text: #c9d1d9;
-      --accent: #58a6ff;
-      --muted: #8b949e;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
+      background: #0d1117;
       font-family: 'Inter', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    header {
-      text-align: center;
-      padding: 4rem 1rem 2rem;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-    }
-
-    header p {
-      color: var(--muted);
-      margin-top: 0.5rem;
-    }
-
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 2rem 1rem;
-    }
-
-    .section-title {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      border-bottom: 1px solid #30363d;
-      padding-bottom: 0.5rem;
-      color: var(--accent);
+      color: #c9d1d9;
+      margin: 0;
+      padding: 2rem;
     }
 
     .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
+      max-width: 800px;
+      margin: auto;
     }
 
     .project {
-      background-color: var(--card);
-      border-radius: 12px;
-      padding: 1.5rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 0 0 transparent;
+      background: #161b22;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: box-shadow 0.3s ease;
+      cursor: pointer;
     }
 
     .project:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     }
 
-    .project h3 {
-      margin-bottom: 0.5rem;
-      color: white;
-    }
-
-    .project p {
-      font-size: 0.95rem;
-      color: var(--muted);
-    }
-
-    .read-more {
-      display: inline-block;
-      margin-top: 1rem;
-      font-size: 0.9rem;
-      color: var(--accent);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s ease;
-    }
-
-    .read-more:hover {
-      border-color: var(--accent);
-    }
-
-    .skills ul {
-      list-style: none;
-      padding-left: 0;
+    .project-header {
+      padding: 1.2rem 1.5rem;
       display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .skills li {
+    .project-header h3 {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    .project-summary {
+      color: #8b949e;
+      font-size: 0.95rem;
+    }
+
+    .project-details {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 1.5rem;
       background-color: #21262d;
-      padding: 0.5rem 0.75rem;
-      border-radius: 6px;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
+      color: #d0d0d0;
+      transition: max-height 0.4s ease, padding 0.4s ease;
     }
 
-    .contact a {
-      color: var(--accent);
-      text-decoration: none;
+    .project.open .project-details {
+      max-height: 500px;
+      padding: 1rem 1.5rem;
     }
 
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.85rem;
-      color: var(--muted);
+    .project-details p {
+      margin-bottom: 0.8rem;
+    }
+
+    .arrow {
+      transition: transform 0.3s ease;
+    }
+
+    .project.open .arrow {
+      transform: rotate(90deg);
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Your Name</h1>
-    <p>Electrical Engineer · Embedded Systems · Hardware Design</p>
-  </header>
+  <div class="projects">
 
-  <div class="container">
-    <section>
-      <div class="section-title">Projects</div>
-      <div class="projects">
-        <div class="project">
+    <div class="project">
+      <div class="project-header">
+        <div>
           <h3>Smart Sensor Network</h3>
-          <p>Mesh-based environmental monitoring using low-power MCUs.</p>
-          <a class="read-more" href="spectrum-analyzer.html">View Project →</a>
+          <p class="project-summary">Low-power mesh network for environmental data</p>
         </div>
-        <div class="project">
-          <h3>Motor Controller PCB</h3>
-          <p>Custom BLDC driver with fault detection for robotics.</p>
-          <a class="read-more" href="motor-control.html">View Project →</a>
+        <div class="arrow">▶</div>
+      </div>
+      <div class="project-details">
+        <p>This project involved designing a mesh-based wireless sensor network using NRF52 microcontrollers. It features automatic node discovery, over-the-air updates, and a dashboard for real-time monitoring.</p>
+        <p><strong>Technologies:</strong> C, FreeRTOS, BLE Mesh, KiCad, Grafana</p>
+        <p><a href="spectrum-analyzer.html" style="color:#58a6ff;">More details →</a></p>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-header">
+        <div>
+          <h3>Custom Motor Controller PCB</h3>
+          <p class="project-summary">Brushless DC controller for robotics</p>
         </div>
-        <div class="project">
+        <div class="arrow">▶</div>
+      </div>
+      <div class="project-details">
+        <p>Designed a four-layer PCB with STM32F0, gate drivers, current sensing, and protection logic. Firmware includes PID speed control, stall detection, and UART diagnostics.</p>
+        <p><strong>Tools:</strong> STM32CubeIDE, Altium, Logic Analyzer, UART</p>
+        <p><a href="motor-control.html" style="color:#58a6ff;">More details →</a></p>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-header">
+        <div>
           <h3>IoT Weather Station</h3>
-          <p>Solar-powered station with AWS MQTT integration.</p>
-          <a class="read-more" href="iot-weather-station.html">View Project →</a>
+          <p class="project-summary">Solar-powered telemetry with cloud sync</p>
         </div>
+        <div class="arrow">▶</div>
       </div>
-    </section>
-
-    <section>
-      <div class="section-title">Skills</div>
-      <div class="skills">
-        <ul>
-          <li>Embedded C</li>
-          <li>PCB Design</li>
-          <li>Signal Processing</li>
-          <li>FPGA (Basic)</li>
-          <li>Power Electronics</li>
-        </ul>
+      <div class="project-details">
+        <p>Designed and deployed a compact station with ESP32, LoRa backup, and a solar panel. Sends temperature, humidity, and air quality metrics to AWS IoT Core every 5 minutes.</p>
+        <p><strong>Stack:</strong> ESP-IDF, MQTT, AWS IoT Core, PCBWay</p>
+        <p><a href="iot-weather-station.html" style="color:#58a6ff;">More details →</a></p>
       </div>
-    </section>
+    </div>
 
-    <section>
-      <div class="section-title">Contact</div>
-      <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
-      <p>GitHub: <a href="https://github.com/yourusername">github.com/yourusername</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile">linkedin.com/in/yourprofile</a></p>
-    </section>
   </div>
 
-  <footer>
-    &copy; 2025 Your Name. All rights reserved.
-  </footer>
+  <script>
+    document.querySelectorAll('.project').forEach(project => {
+      project.addEventListener('click', () => {
+        project.classList.toggle('open');
+      });
+    });
+  </script>
 </body>
 </html>
