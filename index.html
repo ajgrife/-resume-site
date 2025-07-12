@@ -192,22 +192,32 @@
   const closeBtn = document.getElementById('closeBtn');
 
   const projectData = {
-    sensor: `
-      <h2>Smart Sensor Network</h2>
-      <p>This system was built to monitor environmental conditions across remote sites using BLE mesh. The network self-heals and routes data to a base station that aggregates it for cloud logging and visualization.</p>
-      <p><strong>Tools:</strong> C, FreeRTOS, nRF52, Grafana, InfluxDB</p>
-    `,
-    motor: `
-      <h2>Motor Control PCB</h2>
-      <p>A custom 4-layer PCB with STM32, gate drivers, and hall sensor inputs. Implements PID speed control, UART logging, and overcurrent protection. Designed for use in autonomous robotic platforms.</p>
-      <p><strong>Tools:</strong> STM32, Altium, UART, BLDC</p>
-    `,
-    weather: `
-      <h2>IoT Weather Station</h2>
-      <p>Uses an ESP32 with solar power and battery management to transmit data to AWS IoT Core. Includes sensors for temperature, humidity, and air quality with a fallback LoRa module for remote sites.</p>
-      <p><strong>Stack:</strong> ESP-IDF, MQTT, AWS IoT, PCBWay</p>
-    `
-  };
+  spectrum: `
+    <h2>Spectrum Analyzer</h2>
+    <p>This spectrum analyzer project uses an FFT algorithm on an embedded microcontroller to provide real-time frequency spectrum data. It features a display interface, analog front end, and USB communication.</p>
+
+    <h3>Technical Details</h3>
+    <ul>
+      <li>Microcontroller: STM32F4 series</li>
+      <li>ADC Sampling Rate: 48 kHz</li>
+      <li>Display: 2.4" TFT LCD</li>
+      <li>Enclosure: Custom-designed for 3D printing or CNC machining</li>
+    </ul>
+
+    <h3>3D CAD Preview</h3>
+    <model-viewer 
+      src="spectrum-analyzer-cad.glb" 
+      alt="3D CAD model of the Spectrum Analyzer"
+      auto-rotate
+      camera-controls
+      ar
+      ar-modes="webxr scene-viewer quick-look"
+      style="width: 100%; height: 400px; background-color: #eaeaea; border-radius: 8px;">
+    </model-viewer>
+    <p><small>You can rotate, zoom, and inspect the 3D model of the enclosure above.</small></p>
+  `,
+  // other projects...
+};
 
   document.querySelectorAll('.project-card').forEach(card => {
     card.addEventListener('click', () => {
