@@ -2,239 +2,220 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your Name | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name | Electrical Engineer</title>
+  <meta name="description" content="Portfolio showcasing engineering projects." />
+  <meta name="author" content="Your Name" />
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <style>
-    :root {
-      scroll-behavior: smooth;
-    }
-
     body {
-      background: #0d1117;
-      font-family: 'Inter', sans-serif;
-      color: #c9d1d9;
       margin: 0;
-      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      color: #222;
     }
 
     header {
+      background-color: #001f3f;
+      color: white;
+      padding: 3rem 1rem 2rem;
       text-align: center;
-      padding: 4rem 1rem 2rem;
-      background: #161b22;
     }
 
     header h1 {
       font-size: 2.5rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
 
     header p {
-      font-size: 1.2rem;
-      color: #8b949e;
+      font-size: 1.1rem;
+      margin: 0;
     }
 
-    .projects {
-      max-width: 800px;
-      margin: 2rem auto;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
+    .container {
+      max-width: 960px;
+      margin: 3rem auto;
       padding: 0 1rem;
     }
 
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #001f3f;
+      border-bottom: 2px solid #001f3f;
+      padding-bottom: 0.5rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
     .project-card {
-      background: #161b22;
-      border-radius: 12px;
-      padding: 1.5rem;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      padding: 1rem;
       cursor: pointer;
-      transition: background 0.3s ease;
+      transition: transform 0.2s ease;
     }
 
     .project-card:hover {
-      background: #1f2733;
+      transform: translateY(-4px);
     }
 
     .project-card h3 {
-      margin: 0 0 0.4rem;
-    }
-
-    .project-card p {
-      margin: 0;
-      color: #8b949e;
+      margin-top: 0;
+      margin-bottom: 0.3rem;
+      font-size: 1.2rem;
     }
 
     .overlay {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #0d1117f0;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0,0,0,0.85);
+      color: white;
       display: none;
-      align-items: center;
       justify-content: center;
-      z-index: 1000;
+      align-items: flex-start;
       overflow-y: auto;
-    }
-
-    .overlay.active {
-      display: flex;
-    }
-
-    .project-details {
-      background: #161b22;
-      border-radius: 16px;
-      max-width: 700px;
-      width: 90%;
       padding: 2rem;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+      z-index: 1000;
+    }
+
+    .overlay-content {
+      background: #fff;
+      color: #222;
+      max-width: 800px;
+      width: 100%;
+      border-radius: 8px;
+      padding: 2rem;
       position: relative;
-      animation: fadeIn 0.3s ease;
     }
 
-    .project-details h2 {
-      margin-top: 0;
+    .overlay-content h2, .overlay-content h3 {
+      color: #001f3f;
     }
 
-    .project-details p {
-      line-height: 1.6;
-    }
-
-    .close-btn {
+    .overlay-close {
       position: absolute;
       top: 1rem;
-      right: 1rem;
+      right: 1.5rem;
       background: none;
       border: none;
       font-size: 1.5rem;
-      color: #c9d1d9;
       cursor: pointer;
     }
 
-    .close-btn:hover {
-      color: #58a6ff;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
+    model-viewer {
+      width: 100%;
+      height: 400px;
+      background-color: #eaeaea;
+      border-radius: 8px;
+      margin-top: 1rem;
     }
 
     footer {
-      margin-top: 4rem;
-      background: #161b22;
       text-align: center;
-      padding: 2rem 1rem;
-    }
-
-    footer h2 {
-      margin-bottom: 1rem;
-    }
-
-    .contact-link {
-      color: #58a6ff;
-      text-decoration: none;
-      font-size: 1.1rem;
-      display: inline-block;
-      margin: 0.3rem;
-    }
-
-    .contact-link:hover {
-      text-decoration: underline;
+      font-size: 0.9rem;
+      color: #666;
+      margin: 3rem auto 2rem;
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Your Name</h1>
+    <p>Electrical Engineer | Embedded Systems | Hardware Design</p>
+  </header>
 
-<header>
-  <h1>Your Name</h1>
-  <p>Welcome to my portfolio — I'm an Electrical Engineer specializing in embedded systems, PCB design, and IoT hardware. Explore some of the projects I've built below.</p>
-</header>
-
-<main>
-  <div class="projects">
-    <div class="project-card" data-project="sensor">
-      <h3>Smart Sensor Network</h3>
-      <p>Low-power mesh network for environmental data</p>
+  <div class="container">
+    <div class="section-title">Projects</div>
+    <div class="projects-grid">
+      <div class="project-card" data-project="spectrum">
+        <h3>Spectrum Analyzer</h3>
+        <p>FFT-based analyzer with STM32 + 3D CAD enclosure</p>
+      </div>
+      <div class="project-card" data-project="motor">
+        <h3>Motor Controller PCB</h3>
+        <p>Custom PCB and firmware for BLDC motors</p>
+      </div>
+      <!-- Add more cards as needed -->
     </div>
 
-    <div class="project-card" data-project="motor">
-      <h3>Motor Control PCB</h3>
-      <p>Custom BLDC controller for robotics</p>
-    </div>
+    <div class="section-title" style="margin-top: 4rem;">Contact</div>
+    <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
+    <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+  </div>
 
-    <div class="project-card" data-project="weather">
-      <h3>IoT Weather Station</h3>
-      <p>Solar-powered station with AWS cloud logging</p>
+  <footer>
+    &copy; 2025 Your Name. All rights reserved.
+  </footer>
+
+  <div class="overlay" id="projectOverlay">
+    <div class="overlay-content" id="overlayContent">
+      <button class="overlay-close" onclick="closeOverlay()">&times;</button>
+      <div id="projectDetail"></div>
     </div>
   </div>
-</main>
 
-<!-- Fullscreen Overlay -->
-<div class="overlay" id="overlay">
-  <div class="project-details" id="projectDetails">
-    <button class="close-btn" id="closeBtn">&times;</button>
-    <div id="projectContent"></div>
-  </div>
-</div>
+  <script>
+    const projectData = {
+      spectrum: `
+        <h2>Spectrum Analyzer</h2>
+        <p>This spectrum analyzer project uses an FFT algorithm on an embedded microcontroller to provide real-time frequency spectrum data. It features a display interface, analog front end, and USB communication.</p>
 
-<footer id="contact">
-  <h2>Contact Me</h2>
-  <a class="contact-link" href="mailto:you@example.com">you@example.com</a><br>
-  <a class="contact-link" href="https://github.com/yourusername" target="_blank">GitHub</a>
-  <a class="contact-link" href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
-</footer>
+        <h3>Technical Details</h3>
+        <ul>
+          <li>Microcontroller: STM32F4 series</li>
+          <li>ADC Sampling Rate: 48 kHz</li>
+          <li>Display: 2.4" TFT LCD</li>
+          <li>Enclosure: Custom-designed for 3D printing or CNC machining</li>
+        </ul>
 
-<script>
-  const overlay = document.getElementById('overlay');
-  const content = document.getElementById('projectContent');
-  const closeBtn = document.getElementById('closeBtn');
+        <h3>3D CAD Preview</h3>
+        <model-viewer 
+          src="spectrum-analyzer-cad.glb" 
+          alt="3D CAD model of the Spectrum Analyzer"
+          auto-rotate
+          camera-controls
+          ar
+          ar-modes="webxr scene-viewer quick-look">
+        </model-viewer>
+        <p><small>You can rotate, zoom, and inspect the 3D model of the enclosure above.</small></p>
+      `,
+      motor: `
+        <h2>Custom Motor Controller</h2>
+        <p>Designed a brushless DC motor controller for robotic motion using a custom PCB layout and embedded firmware.</p>
+        <ul>
+          <li>MCU: STM32G4</li>
+          <li>Control Algorithm: FOC (Field-Oriented Control)</li>
+          <li>Communication: CAN bus</li>
+          <li>Power Stage: 3-phase inverter</li>
+        </ul>
+      `
+    };
 
-  const projectData = {
-  spectrum: `
-    <h2>Spectrum Analyzer</h2>
-    <p>This spectrum analyzer project uses an FFT algorithm on an embedded microcontroller to provide real-time frequency spectrum data. It features a display interface, analog front end, and USB communication.</p>
+    const cards = document.querySelectorAll('.project-card');
+    const overlay = document.getElementById('projectOverlay');
+    const detail = document.getElementById('projectDetail');
 
-    <h3>Technical Details</h3>
-    <ul>
-      <li>Microcontroller: STM32F4 series</li>
-      <li>ADC Sampling Rate: 48 kHz</li>
-      <li>Display: 2.4" TFT LCD</li>
-      <li>Enclosure: Custom-designed for 3D printing or CNC machining</li>
-    </ul>
-
-    <h3>3D CAD Preview</h3>
-    <model-viewer 
-      src="spectrum-analyzer-cad.glb" 
-      alt="3D CAD model of the Spectrum Analyzer"
-      auto-rotate
-      camera-controls
-      ar
-      ar-modes="webxr scene-viewer quick-look"
-      style="width: 100%; height: 400px; background-color: #eaeaea; border-radius: 8px;">
-    </model-viewer>
-    <p><small>You can rotate, zoom, and inspect the 3D model of the enclosure above.</small></p>
-  `,
-  // other projects...
-};
-
-  document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('click', () => {
-      const id = card.getAttribute('data-project');
-      content.innerHTML = projectData[id];
-      overlay.classList.add('active');
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        const id = card.dataset.project;
+        detail.innerHTML = projectData[id];
+        overlay.style.display = 'flex';
+      });
     });
-  });
 
-  closeBtn.addEventListener('click', () => {
-    overlay.classList.remove('active');
-  });
-
-  overlay.addEventListener('click', (e) => {
-    if (e.target === overlay) overlay.classList.remove('active');
-  });
-</script>
-
+    function closeOverlay() {
+      overlay.style.display = 'none';
+      detail.innerHTML = '';
+    }
+  </script>
 </body>
 </html>
